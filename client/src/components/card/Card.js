@@ -5,17 +5,17 @@ import { GrCircleInformation } from "react-icons/gr";
 import "./card.css";
 // import { types } from "util";
 
-export const Card = ({ post,socket,user }) => {
+export const Card = ({ post, socket, user }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const handleLikeClick = (type) => {
     // setIsLiked(!isLiked);
     setIsLiked(true);
-    socket.emit("sendNotification",{
-      senderName:user,
-      receiverName:post.username,
-      type:type,
-    })
+    socket.emit("sendNotification", {
+      senderName: user,
+      receiverName: post.username,
+      type: type,
+    });
   };
 
   return (
@@ -26,16 +26,16 @@ export const Card = ({ post,socket,user }) => {
       </div>
       <img src={post.postImg} alt="" className="postImg" />
       <div className="interaction">
-        <div className="cardIcon" onClick={()=>handleLikeClick(1)}>
+        <div className="cardIcon" onClick={() => handleLikeClick(1)}>
           {isLiked ? <AiFillLike /> : <AiOutlineLike />}
         </div>
-        <div className="cardIcon" onClick={()=>handleLikeClick(2)}>
+        <div className="cardIcon" onClick={() => handleLikeClick(2)}>
           <FaRegCommentAlt />
         </div>
-        <div className="cardIcon" onClick={()=>handleLikeClick(3)}>
+        <div className="cardIcon" onClick={() => handleLikeClick(3)}>
           <FaShare />
         </div>
-        <div className="cardIcon infoIcon" onClick={()=>handleLikeClick(4)}>
+        <div className="cardIcon infoIcon" onClick={() => handleLikeClick(4)}>
           <GrCircleInformation />
         </div>
       </div>
