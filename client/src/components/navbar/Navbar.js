@@ -39,6 +39,9 @@ export const Navbar = ({socket}) => {
           <div className="counter">2</div>
         </div>
       </div>
+      <div>
+        
+      </div>
     </div>
   );
 };
