@@ -40,7 +40,10 @@ export const Navbar = ({socket}) => {
         </div>
       </div>
       <div>
-        
+        <div>
+          
+        </div>
+
       </div>
     </div>
   );
